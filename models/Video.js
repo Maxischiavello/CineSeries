@@ -10,11 +10,11 @@ const videoSchema = new Schema({
     required: [true, "URL is required"],
   },
   movie: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Movie",
   },
   series: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Show",
   },
 });

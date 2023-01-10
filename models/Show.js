@@ -23,4 +23,4 @@ const showSchema = new Schema({
   },
 });
 
-module.exports = model("Show", showSchema)
+module.exports = model("Show", showSchema);

@@ -1,16 +1,16 @@
-require('dotenv').config({ path: '.env' });
-const jwt = require('jsonwebtoken');
+require("dotenv").config({ path: ".env" });
+const jwt = require("jsonwebtoken");
 
 /**
  * Middleware to check token
  */
 module.exports = function (req, res, next) {
-
   // Read token from header
-  const token = req.header('x-auth-token');
-  
+  const token = req.header("x-auth-token");
+
   // Check if there is no token and role
-  if (!token) return res.status(403).json({ msg: 'No token, permission denied' });
+  if (!token)
+    return res.status(403).json({ msg: "No token, permission denied" });
 
   // Validate token
   try {
@@ -18,6 +18,6 @@ module.exports = function (req, res, next) {
     req.user = encrypted.user;
     next();
   } catch (error) {
-    res.status(422).json({ msg: 'Invalid token' });
+    res.status(422).json({ msg: "Invalid token" });
   }
 };

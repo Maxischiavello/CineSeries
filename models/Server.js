@@ -12,6 +12,10 @@ class Server {
       user: "/api/user",
       adminLogin: "/api/admin_login",
       userLogin: "/api/user_login",
+      movie: "/api/movie",
+      news: "/api/news",
+      show: "/api/show",
+      video: "/api/video",
     };
   }
 
@@ -38,6 +42,10 @@ class Server {
     this.app.use(this.path.user, require("../routes/userRoutes"));
     this.app.use(this.path.adminLogin, require("../routes/authAdminRoutes"));
     this.app.use(this.path.userLogin, require("../routes/authUserRoutes"));
+    this.app.use(this.path.movie, require("../routes/movieRoutes"));
+    this.app.use(this.path.news, require("../routes/newsRoutes"));
+    this.app.use(this.path.show, require("../routes/showRoutes"));
+    this.app.use(this.path.video, require("../routes/videoRoutes"));
   }
 }
 

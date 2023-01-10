@@ -23,13 +23,13 @@ const loginUser = async (req, res) => {
     }
 
     const passwordCheckup = await bcryptjs.compare(password, user.password);
-   
+
     if (!passwordCheckup) {
       return res.status(401).json({ msg: "Incorrect user and/or password" });
     }
 
     const payload = { user: { id: user.id } };
-    
+
     jwt.sign(
       payload,
       process.env.JWT_SECRET,

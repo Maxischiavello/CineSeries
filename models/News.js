@@ -14,7 +14,7 @@ const newsSchema = new Schema({
     required: [true, "Date is required"],
   },
   movie: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Movie",
   },
   created_at: {

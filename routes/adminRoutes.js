@@ -21,8 +21,8 @@ const auth = require("../middleware/auth");
 router.post(
   "/",
   [
-    //auth,
-    //isAdmin,
+    auth,
+    isAdmin,
     check("email", "Please enter a valid email address").isEmail(),
     check(
       "password",

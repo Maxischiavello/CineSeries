@@ -19,7 +19,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Role is required"],
     trim: true,
-    default: "admin",
+    default: "user",
   },
   created_at: {
     type: Date,
